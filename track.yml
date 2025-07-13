@@ -1,0 +1,50 @@
+slug: infoblox-instant-ddi
+id: 26xnz6aweydm
+revision: -62135596800
+title: 'Moving at the Speed of Cloud: Deploy NIOS-X-as-a-Service for Instant DDI'
+teaser: Discover how to secure and monitor Generative AI workloads with Infoblox DNS
+  controls—across AWS and Bedrock—with real-time visibility, threat detection, and
+  hybrid cloud flexibility.
+description: "Lab Introduction: Securing Generative AI Workloads with Infoblox DNS
+  in Multicloud\n\nThis hands-on lab simulates a real-world, security-first DNS architecture
+  supporting Generative AI workloads, using Infoblox NIOS X-as-a-Service across a
+  hybrid multicloud environment (AWS ).\n\nParticipants will deploy an application
+  (Flask-based or serverless Lambda in a VPC) that sends prompts to Amazon Bedrock,
+  receives AI-generated responses with outbound links, and observes DNS resolution
+  visibility, filtering, and enforcement via Infoblox.\n\n⸻\n\nWhat You’ll Build:\n\n\U0001F9E0
+  AI Assistant Frontend App:\n- Flask or Lambda app submits prompts to Bedrock (Claude/Titan)
+  and extracts URLs from the response.\n\U0001F310 Client VPC in AWS:\n- The app resides
+  in an AWS VPC simulating enterprise traffic originating from cloud workloads.\n-
+  \U0001F510 Secure DNS Hub (two architectural options in addition to NIOS-X-as-a-Service
+  that we will do in this Lab):\n- Option 1: Cloud-native DNS (e.g., Route 53 Resolver
+  or Azure DNS Forwarder) with conditional forwarding to Infoblox SaaS PoP\n- Option
+  2: Direct deployment of vNIOS in AWS or Azure, acting as recursive and policy-aware
+  DNS hub\n\n⸻\n\nKey Capabilities Demonstrated:\n\n✅ DNS resolution from AI workloads
+  to trusted and AI-generated domains (e.g., webmd.com, cdc.gov)\n\n✅ Real-time detection
+  and blocking of simulated malicious AI response domains (e.g., ai-medicine-data.info)\n\n✅
+  Enforced DNS policies using Infoblox Threat Intelligence\n\n✅ Visibility of all
+  DNS queries in real-time via logs and UI dashboards\n\n✅ Deployment flexibility
+  with NIOS-X-as-a-Service\n\n⸻\n\n\U0001F4A1 This lab gives you hands-on experience
+  in applying DNS as a security and observability layer for AI-driven workloads. You’ll
+  see how Infoblox enables centralized policy enforcement and hybrid DNS visibility,
+  even across cloud-native infrastructure."
+icon: https://play.instruqt.com/assets/tracks/ywozzymyekgv/c31663d57dce11f7baad50af3f7dec77/assets/Infoblox-logo-for-email.png
+tags: []
+owner: infoblox
+developers:
+- iracic@infoblox.com
+instructors: []
+show_timer: true
+idle_timeout: 0
+timelimit: 14400
+lab_config:
+  extend_ttl: 0
+  sidebar_enabled: true
+  hideStopButton: false
+  feedback_recap_enabled: true
+  feedback_tab_enabled: false
+  theme:
+    name: modern-dark
+  override_challenge_layout: false
+  loadingMessages: true
+enhanced_loading: null

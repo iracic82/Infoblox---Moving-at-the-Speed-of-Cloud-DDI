@@ -1,0 +1,25 @@
+#!/bin/bash
+set -euxo pipefail
+cd /root/infoblox-lab/secure-ai-infoblox/scripts
+
+
+
+
+#python3 extract_provider_ids.py
+#sleep 10
+#python3 delete_providers.py
+#sleep 10
+#python3 extract_my_dns_view_ids.py
+#sleep 10
+#python3 delete_dns_views.py
+#sleep 10
+#python3 delete_azure_credential_from_file.py
+#sleep 10
+
+python3 delete_sandbox.py
+sleep 10
+python3 clean_dns_web.py
+sleep 10
+python3 delete_user.py
+sleep 10
+

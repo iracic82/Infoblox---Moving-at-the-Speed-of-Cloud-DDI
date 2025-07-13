@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# This script runs when the platform setup the challenge.
+#
+cd /root/infoblox-lab/secure-ai-infoblox/terraform
+
+# --- Fetch Web Server Public IP from Terraform Output ---
+# Extract the public IP from terraform output
+WebServ1=$(terraform output ssh_access_aws_eu | grep -oP '(?<=@)[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
+
+# Validate extraction
+if [[ -z "$WebServ1" ]]; then
+  echo "❌ Error: Could not extract public IP from terraform output"
+  exit 1
+fi
+
+# Export to current session
+export WebServ1
+echo "✅ WebServ1=${WebServ1} exported to current shell"
+
+# Persist to /root/.bashrc
+BASHRC="/root/.bashrc"
+
+# Create if not exist
+touch $BASHRC
+
+# Check if variable already exists and update, or append if not
+if grep -q "^export WebServ1=" "$BASHRC"; then
+  sed -i "s|^export WebServ1=.*|export WebServ1=${WebServ1}|" "$BASHRC"
+else
+  echo "export WebServ1=${WebServ1}" >> "$BASHRC"
+fi
+
+echo "💾 WebServ1 persisted to $BASHRC"
+
+source /root/.bashrc
+
+cd /root/infoblox-lab/secure-ai-infoblox/scripts
+python3 create_dns_web.py
+sleep 10
+
