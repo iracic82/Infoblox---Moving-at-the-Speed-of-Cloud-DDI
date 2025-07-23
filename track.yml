@@ -1,33 +1,27 @@
 slug: infoblox-instant-ddi
 id: 26xnz6aweydm
-revision: -62135596800
-title: 'Moving at the Speed of Cloud: Deploy NIOS-X-as-a-Service for Instant DDI'
-teaser: Discover how to secure and monitor Generative AI workloads with Infoblox DNS
-  controls—across AWS and Bedrock—with real-time visibility, threat detection, and
-  hybrid cloud flexibility.
-description: "Lab Introduction: Securing Generative AI Workloads with Infoblox DNS
-  in Multicloud\n\nThis hands-on lab simulates a real-world, security-first DNS architecture
-  supporting Generative AI workloads, using Infoblox NIOS X-as-a-Service across a
-  hybrid multicloud environment (AWS ).\n\nParticipants will deploy an application
-  (Flask-based or serverless Lambda in a VPC) that sends prompts to Amazon Bedrock,
-  receives AI-generated responses with outbound links, and observes DNS resolution
-  visibility, filtering, and enforcement via Infoblox.\n\n⸻\n\nWhat You’ll Build:\n\n\U0001F9E0
-  AI Assistant Frontend App:\n- Flask or Lambda app submits prompts to Bedrock (Claude/Titan)
-  and extracts URLs from the response.\n\U0001F310 Client VPC in AWS:\n- The app resides
-  in an AWS VPC simulating enterprise traffic originating from cloud workloads.\n-
-  \U0001F510 Secure DNS Hub (two architectural options in addition to NIOS-X-as-a-Service
-  that we will do in this Lab):\n- Option 1: Cloud-native DNS (e.g., Route 53 Resolver
-  or Azure DNS Forwarder) with conditional forwarding to Infoblox SaaS PoP\n- Option
-  2: Direct deployment of vNIOS in AWS or Azure, acting as recursive and policy-aware
-  DNS hub\n\n⸻\n\nKey Capabilities Demonstrated:\n\n✅ DNS resolution from AI workloads
-  to trusted and AI-generated domains (e.g., webmd.com, cdc.gov)\n\n✅ Real-time detection
-  and blocking of simulated malicious AI response domains (e.g., ai-medicine-data.info)\n\n✅
-  Enforced DNS policies using Infoblox Threat Intelligence\n\n✅ Visibility of all
-  DNS queries in real-time via logs and UI dashboards\n\n✅ Deployment flexibility
-  with NIOS-X-as-a-Service\n\n⸻\n\n\U0001F4A1 This lab gives you hands-on experience
-  in applying DNS as a security and observability layer for AI-driven workloads. You’ll
-  see how Infoblox enables centralized policy enforcement and hybrid DNS visibility,
-  even across cloud-native infrastructure."
+revision: 1
+title: 'Infoblox - Moving at the Speed of Cloud: DDI'
+teaser: 'Zero to DDI in Minutes: Rapid Cloud Networking with Infoblox NIOS-X'
+description: "Lab Introduction:\n\nMoving at the Speed of Cloud with NIOS-X as a Service\nThis
+  hands-on lab guides you through deploying DNS services using Infoblox NIOS-X-as-a-Service,
+  simulating a cloud landing zone rollout for a new AWS region.\n\nYou’ll work as
+  part of a CloudOps/NetOps team tasked with bringing up DNS and security services
+  in an environment where the rest of the infrastructure — VPC, VPN endpoint, and
+  security zones — already exists and is governed centrally by Infoblox UDDI.\n\n⸻\n\n\U0001F680
+  What You’ll Do:\n\n- Create DNS and security service instances using NIOS-X-as-a-Service\n-
+  Connect them to an existing AWS VPC as part of a landing zone\n- Use an EC2 instance
+  in that VPC to test resolution, policy enforcement, and visibility\n\n\n✅ Key Capabilities
+  Demonstrated:\n\n- Rapid deployment of authoritative and recursive DNS services
+  via Infoblox SaaS\n- Policy enforcement using pre-defined security configurations
+  from Threat Defense\n- DNS resolution from a cloud workload via VPC-to-NIOS-X-as-a-Service
+  integration\n- Blocking of malicious or unauthorized domains using policy-driven
+  security enforcement\n- Real-time DNS query visibility and analytics via the Infoblox
+  Portal\n\n\n\U0001F4A1 This lab gives you hands-on experience with cloud-native
+  DNS-as-a-Service in minutes — all within a multicloud strategy.\nYou’ll walk away
+  with practical knowledge on integrating DNS and security policies into a new cloud
+  region at the speed of DevOps.\n\n\U0001F6E1️ Build it fast. Secure it by design.
+  Operate it with clarity.\n"
 icon: https://play.instruqt.com/assets/tracks/ywozzymyekgv/c31663d57dce11f7baad50af3f7dec77/assets/Infoblox-logo-for-email.png
 tags: []
 owner: infoblox

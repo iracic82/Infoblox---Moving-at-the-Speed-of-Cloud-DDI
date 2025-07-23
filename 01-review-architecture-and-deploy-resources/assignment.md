@@ -37,50 +37,57 @@ enhanced_loading: null
 ---
 # Overview
 
-The integration of Generative AI into healthcare workflows is rapidly accelerating. Doctors, clinicians, and researchers are using AI to:
- - Summarize clinical notes
- - Draft care plans
- - Analyze symptoms or diagnostics
+CloudOps and NetOps teams today are under constant pressure to deliver DNS, DHCP, and IPAM (DDI) services at the pace of cloud and application teams. Manually provisioning DNS via virtual appliances no longer scales — especially in environments where cost optimization and operational simplicity are paramount.
 
-However, this also introduces new risk vectors — including uncontrolled DNS traffic, third-party API usage, and exposure to unvetted data sources.
+Enter Infoblox NIOS X-as-a-Service: a fully managed DNS and security service that plugs directly into cloud networks — no VMs, no patching, no operational overhead. Just fast, scalable, policy-aligned DDI as a service.
 
-# Use Case Story: Dr. Claire
 
-Meet Dr. Claire, a busy pediatrician. She uses an internal web-based assistant to:
- - Ask medical questions like “What are common asthma triggers in children?”
- - Upload notes for summarization
- - Pull references from drug or symptom databases
 
-Behind the scenes, this app uses AWS Bedrock with Claude to generate intelligent responses.
+# Use Case Story: CloudOps at Speed
 
-But there’s a hidden challenge:
- - What happens when the app tries to resolve domains like `ai-medicine-data.info`?
- - Or connects to third-party APIs over DNS?
- - Or leaks sensitive lookup patterns?
+Meet Jenna, a CloudOps engineer at a global enterprise. Her team is deploying a new AWS region as part of a global product expansion. This region includes:
+- A newly provisioned VPC and VPN
+- EC2 workloads requiring immediate name resolution
+- DNS and security policies already defined in Infoblox UDDI
 
-This is where Infoblox DNS Security plays a critical role.
+The networking team — led by Max — is aligned on one principle: no more spinning up virtual appliances just to deliver DNS. The operational burden, patching schedules, and cloud cost models have forced them to look for a SaaS-native solution that just plugs in and works.
 
-# DNS Security for GenAI
 
-Even in secure cloud environments, AI apps and LLMs introduce DNS-layer activity:
- - Flask-based apps resolve endpoints like `bedrock-runtime.amazonaws.com`
- - LLM responses often include external medical URLs
- - Optional third-party lookups may target unapproved or risky domains
+Here’s the challenge:
+- The landing zone needs to go live today
+- DNS must be secured and compliant — immediately
+- The solution must be cloud-native, cost-efficient, and ops-free
 
-Infoblox Threat Defense provides:
- - Allow-lists and domain policy control
- - Detection of suspicious DNS behavior (e.g., entropy, volume, or tunneling)
- - Real-time enforcement (RPZ, TIDE-based blocking)
+That’s exactly what NIOS X-as-a-Service delivers.
+
+# DDI in Minutes — Without the Baggage
+
+Using the Infoblox SaaS control plane, Jenna:
+- Instantiates a new NIOS-X service using existing DNS + security profiles
+- Connects it to the AWS VPC in minutes — no agents, no appliances
+- Validates DNS resolution and security policy enforcement directly from a test EC2 instance
+
+Infoblox Universal DDI + Threat Defense provides:
+- ✅ Enterprise-grade DNS in the cloud — without running infrastructure
+- ✅ Real-time enforcement using RPZs and curated threat intel
+- ✅ Operational consistency across on-prem, Azure, and AWS — all from a single SaaS control plane
+
 
 
 # Business Value
 
-Without DNS-layer enforcement, GenAI apps are opaque and vulnerable.
- With Infoblox:
- - Security teams gain real-time visibility and control
- - AI access is restricted to approved sources
- - Threats like DNS tunneling, data leaks, or typosquatting are neutralized
- - AI adoption becomes safe and compliant in regulated sectors like healthcare
+Without a SaaS-based DNS and security model:
+- Teams are stuck managing virtual appliances and patching cycles
+- Cloud environments inherit fragmented, inconsistent DNS policies
+- DNS becomes a silo — not a security control point
+
+With Infoblox NIOS X-as-a-Service:
+- DNS and security services are delivered at cloud speed — ops-free
+- CloudOps + NetOps converge around a single, managed DDI platform
+- Centralized visibility, unified policy, and consistent enforcement just work — **with zero infrastructure burden**
+
+⸻
+
 
 
 
@@ -154,39 +161,75 @@ On the login screen, choose IAM Account (not root).
 ## 3) Deploy resources onto your cloud regions
 ===
 
-🧱 Deploying the Lab Infrastructure
+🧱 Deploying the Lab Infrastructure: Your AWS Landing Zone Starts Here
 
-Now that you’ve logged into both cloud consoles, it’s time to deploy the infrastructure that reflects the architecture shown in the lab diagram.
+You’ve logged into the AWS console — now it’s time to build out the cloud-side foundation for DNS and security. This simulates what you’d do when bringing up a new region or VPC that needs to connect into your existing DNS and security architecture.
+
+The goal here isn’t to spin up the kitchen sink — it’s to deploy just enough to simulate real DNS resolution flow through Infoblox NIOS-X as a Service.
+
 
 👉 Switch back to the “>_ Shell” tab in the left-side panel of your Instruqt lab to proceed.
 
+---
 ### 1. Deploy AWS resources in EU
 
-Apply the resources:
+This command sets up the essential building blocks of your cloud-side lab environment:
+•	A dedicated VPC and subnet to simulate your new region
+•	An Internet Gateway to provide outbound connectivity
+•	A VPN Gateway to establish a secure tunnel back to Infoblox
+•	One EC2 instance that acts as your client — sending real DNS queries into the system
+
 
 ```run
 cd ~/infoblox-lab/secure-ai-infoblox/terraform
 terraform apply --auto-approve  -target=module.aws__instances_eu -target=aws_vpn_gateway.vgw
 ```
 
-## 4) Enable Amazon Bedrock Model Access in AWS Console
-===
+Next, you’ll deploy the DNS infrastructure, including private zones and the necessary A records — exactly as shown in the lab diagram.
 
-☁️ Simulated Bedrock Integration (Lab Setup)
+```run
+cd ~/infoblox-lab/secure-ai-infoblox/terraform
+terraform apply --auto-approve -target=aws_route53_zone.private_zone -target=aws_route53_record.dns_records
+```
+---
 
-> [!IMPORTANT]
-> Note: The steps in this section are titled “Enable Amazon Bedrock Model Access in AWS Console” to mirror real-world configuration. However, in this lab environment, we use a simulated (mock) API endpoint instead of provisioning actual Bedrock access.
+🪣 Deploying S3 for DNS Validation
 
-The Flask backend is built to integrate with the real AWS Bedrock API (e.g., using boto3 or API Gateway for InvokeModel calls), but for demo purposes:
-	•	✅ No AWS credentials or real Bedrock services are required
-	•	🧪 Mock responses mimic real GenAI output
-	•	🔍 DNS queries simulate real-world behavior for AI-enhanced domains
+To simulate DNS resolution and observe policy enforcement against web assets, you’ll deploy an S3 bucket and make it accessible via a custom DNS name.
 
-This approach allows us to effectively demonstrate DNS inspection, threat detection, and policy enforcement via Infoblox, without the overhead of real AWS Bedrock configuration.
+Split this deployment into two phases to ensure resources are created in the correct order:
+
+### Phase 1: Provision the S3 bucket and apply access restrictions
+```run
+cd ~/infoblox-lab/secure-ai-infoblox/terraform
+terraform apply --auto-approve \
+  -target=aws_s3_bucket.infoblox_poc \
+  -target=aws_s3_bucket_public_access_block.infoblox_poc
+```
+
+This creates a secure S3 bucket with public access restrictions — preventing unintended exposure while still allowing access via defined DNS.
 
 
+### Phase 2: Attach the policy, upload a test object, and map it via DNS
 
-## 5) Create Admin User to your Infoblox Portal Dashboard
+```run
+cd ~/infoblox-lab/secure-ai-infoblox/terraform
+terraform apply --auto-approve \
+  -target=aws_s3_bucket_policy.public_access \
+  -target=aws_s3_object.uploaded_image \
+  -target=aws_route53_record.s3_cname
+```
+
+🛠️ Terraform will take care of the heavy lifting — no console clicking or manual setup. Just wait for the apply to finish.
+
+---
+✅ Once Complete
+
+You now have a simulated cloud workload in place — an EC2 instance that will later send DNS queries through the IPsec tunnel to Infoblox NIOS-X as a Service.
+
+🎯 Next step: Deploy the Infoblox service instance, attach it to the VPC, and test DNS + security enforcement in action.
+
+## 4) Create Admin User to your Infoblox Portal Dashboard
 ===
 
 
@@ -224,8 +267,7 @@ Your user account and sandbox have already been created. The next step is to set
 
 ---
 
-
-![Screenshot 2025-04-01 at 11.03.20.png](https://play.instruqt.com/assets/tracks/ywozzymyekgv/bdbf322902db478154c3fece79237f86/assets/Screenshot%202025-04-01%20at%2011.03.20.png)
+![Screenshot 2025-07-18 at 09.16.24.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/09e41ec1cf57a6f2cbe5d2c47721a26b/assets/Screenshot%202025-07-18%20at%2009.16.24.png)
 
 ---
 
@@ -237,7 +279,7 @@ Your user account and sandbox have already been created. The next step is to set
 2.	Login using your existing email address and password.
 3.	Once authenticated, the lab tenant will be automatically added to your list of available tenants (you’ll see it in the top-right tenant switcher).
 
-![Screenshot 2025-07-03 at 11.19.07.png](https://play.instruqt.com/assets/tracks/ywozzymyekgv/93f17f66e50b5a58f68e3e3d3953396a/assets/Screenshot%202025-07-03%20at%2011.19.07.png)
+![Screenshot 2025-07-18 at 09.16.24.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/09e41ec1cf57a6f2cbe5d2c47721a26b/assets/Screenshot%202025-07-18%20at%2009.16.24.png)
 
 In order to RESET the password follow the steps below:
 

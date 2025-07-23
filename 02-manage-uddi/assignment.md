@@ -40,9 +40,9 @@ enhanced_loading: null
 DNS is foundational — but in a multicloud world, managing and securing it across fragmented infrastructure can quickly become a liability.
 
 In this challenge, you’ll activate Infoblox NIOS X-as-a-Service — a fully managed, cloud-delivered DNS platform operated by Infoblox. This is not a virtual appliance you deploy — it’s a zero-footprint SaaS model where Infoblox handles all the heavy lifting:
-	•	No VM provisioning
-	•	No patching
-	•	No scaling headaches
+•	No VM provisioning
+•	No patching
+•	No scaling headaches
 
 Just plug into it, and go.
 
@@ -56,10 +56,10 @@ You’ll walk through the activation steps via the Infoblox Cloud Services Porta
 Creating As-a-Service
 
 Key actions include:
-	•	Selecting your cloud region
-	•	Assigning a service name
-	•	Enabling DNS visibility and security services
-	•	Connecting downstream sites or cloud VPCs
+•	Selecting your cloud region
+•	Assigning a service name
+•	Enabling DNS visibility and security services
+•	Connecting downstream sites or cloud VPCs
 
 Once provisioned, your NIOS-X-as-a-service will act as a cloud-native DNS control plane for enforcing policy, inspecting queries, and managing DDI services globally — no infrastructure required.
 
@@ -204,6 +204,10 @@ Copy Service IP from below into the Infoblox portal
 14.1 click **Add Primary**
 ![Jun-23-2025_at_23.18.57-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/6de0d05fa4742d9e6a281a7af4aa4a48/assets/Jun-23-2025_at_23.18.57-image.png)
 - give name to your primary connection
+
+> [!IMPORTANT]
+> ✅ NOTE:Make the name unique for both the Primary  and the  Secondary Connection.
+
 - configure **PATH**
 - click **Add Primary**
 ![Jun-23-2025_at_23.21.04-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9c4b41a974989ff6f43432c4180680f6/assets/Jun-23-2025_at_23.21.04-image.png)
@@ -231,9 +235,13 @@ InfobloxDNSLab2025.
 ![Jun-23-2025_at_23.33.24-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/473b4aed0aa79cd469105096fd782c69/assets/Jun-23-2025_at_23.33.24-image.png)
 - Click **Add Primary Connection**
 ![Jun-23-2025_at_23.33.40-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9a26d9c5857aa778823016db47fca9b8/assets/Jun-23-2025_at_23.33.40-image.png)
-14.2 (Optional) click **Add Secondary**
+14.2 Click **Add Secondary**
 ![Jun-23-2025_at_23.41.20-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/341cc0537721ae693255e72b7a45a9e5/assets/Jun-23-2025_at_23.41.20-image.png)
 - give name to your secondary connection
+
+> [!IMPORTANT]
+> ✅ NOTE:Make the name unique for both the Primary  and the  Secondary Connection.
+
 - configure **PATH**
 - click **Add Secondary**
 ![Jun-23-2025_at_23.42.48-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/30268ed660cd4bb79353427fd892c92c/assets/Jun-23-2025_at_23.42.48-image.png)
@@ -257,7 +265,8 @@ InfobloxDNSLab2025.
 - enter the Dummy values at  **Neighbor IP Address**  and  **Access Location ASN   as it will be reconfigured.
 - Click **Add Secondary Path**
 ![Jun-23-2025_at_23.48.19-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/df4fae96328440b4d55dfa99199929ef/assets/Jun-23-2025_at_23.48.19-image.png)
-- Click **Add Primary Connection** ![Jun-23-2025_at_23.48.39-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/20187257b5fabe28df90fa9b985e8a04/assets/Jun-23-2025_at_23.48.39-image.png)
+- Click **Add Primary Connection**
+![Jun-23-2025_at_23.48.39-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/20187257b5fabe28df90fa9b985e8a04/assets/Jun-23-2025_at_23.48.39-image.png)
 - Finally click **Add Location**
 ![Jun-23-2025_at_23.49.59-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/0292d885d013c51a6b63219811845420/assets/Jun-23-2025_at_23.49.59-image.png)
 - Click **Add Deployment*
@@ -277,8 +286,18 @@ InfobloxDNSLab2025.
 
 ## 2. Configuring AWS
 
-Go to the AWS Web Console. In the left window of the lab environment, click on the AWS Console tab to launch the console.
-Use the login credentials provided in the previous section 1)  to sign in.
+🔧 Create Customer Gateways (Step 2)
+
+Go to the AWS Web Console. In the left window of the lab environment, click on the AWS Console tab to launch it.
+
+Use the login credentials provided in Section 1 to sign in.
+
+> [!IMPORTANT]
+> 📍 Important: Before proceeding, make sure you switch to the correct region:
+Select eu-west-2 (London) from the region selector in the top-right corner of the console.
+This is required to ensure that the Customer Gateways and subsequent VPN configurations are created in the same region.
+
+Once you’re in the correct region, proceed to create the Customer Gateways as outlined.
 
 1. Now we will create 2 x  **Costumer Gateways**.
 2. Go to Virtual private network (VPN)>Customer gateways.
@@ -298,6 +317,9 @@ Use the login credentials provided in the previous section 1)  to sign in.
 - **IP Address** -  this will be the value of second IP in Cloud Service IP under Service Deployment.
 - Fill in the option fields if you wish to
 ![Jun-24-2025_at_10.41.58-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/b15aa64ce0606207cb8d4db2101deb79/assets/Jun-24-2025_at_10.41.58-image.png)
+
+> [!NOTE]
+> Select Create Customer Gateway to complete provisioning of the second CGW instance.
 
 7. Now you will be creating two **Site-to-Site VPN connections**
 
@@ -388,6 +410,26 @@ In the AWS Console, use the search bar at the top and type VPC, then click on th
 
 1. In your AWS console go to Site-to-Site VPN connections
 2. Go to Tunnel-1 that you configured in step 23 of 2
+
+🌐 Retrieve Tunnel 1 Outside IP (AWS)
+
+To complete the IPsec setup, you’ll need to fetch the outside IP address for Tunnel 1 from your AWS VPN connection:
+- Go to the AWS Console (ensure you’re still in eu-west-2 region).
+- In the Search bar, type VPN and select Site-to-Site VPN Connections.
+
+![Screenshot 2025-07-18 at 08.59.42.png](https://play.instruqt.com/assets/tracks/uoielkrmzmtm/28f80cd79e742f2775e381ba05cfc089/assets/Screenshot%202025-07-18%20at%2008.59.42.png)
+
+- Locate your first VPN connection (e.g., vpn-1) in the list.
+- Click on the VPN Connection ID to open the details page.
+
+![Screenshot 2025-07-18 at 09.01.24.png](https://play.instruqt.com/assets/tracks/uoielkrmzmtm/229a1318b0f7a81532cab50d572445a1/assets/Screenshot%202025-07-18%20at%2009.01.24.png)
+
+- Scroll down to the Tunnel Details section.
+
+![Screenshot 2025-07-18 at 09.02.37.png](https://play.instruqt.com/assets/tracks/uoielkrmzmtm/ab7d82c6cfc8f6b90d68066ae54ce6d3/assets/Screenshot%202025-07-18%20at%2009.02.37.png)
+
+- Under Tunnel 1, look for the field labeled Outside IP Address.
+
 3. Copy **Outside IP address** of Tunnel-1
 4. Log in to your Infoblox Portal again and navigate to  Configure >Service Deployment >As-A-Service > **Your service**
 5. Click on three dots in front of your **service name** and click edit
@@ -557,6 +599,137 @@ From WebServerProdEu1 run the following command:
 ```run
 dig google.com
 ```
+
+## 4) Configuring Infoblox NIOS-X as Authoritative DNS for AWS Private Zone
+===
+
+In this section, we will extend our setup by integrating Infoblox NIOS-X-as-a-Service as the authoritative DNS for the infolab.com AWS Private DNS zone.
+
+After syncing the zone from AWS using API-based synchronization, we will configure the authoritative DNS servers under Infoblox’s “Configure” section to explicitly designate NIOS-X as the DNS authority for the zone. This enables Infoblox to answer DNS queries for AWS workloads and any other clients resolving *.infolab.com.
+
+> [!IMPORTANT]
+> NOTE: Make sure the AWS Discovery Job is fully synced before proceeding. This step has been pre-provisioned in the backend to streamline the lab and save you setup time.
+
+![Screenshot 2025-07-13 at 11.54.16.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/effdad2c585e07432cc4c0dd3f2cb261/assets/Screenshot%202025-07-13%20at%2011.54.16.png)
+
+You’ll also see how to:
+- Identify synced zones under the DNS view
+- Modify the zone properties to add authoritative DNS instances
+- Validate resolution by running dig from an EC2 instance ( from AWS Region ) pointing to the NIOS-X DNS IP
+
+This is key for hybrid or multicloud deployments where unified visibility, control, and logging over DNS is critical.
+
+🛠 Prerequisites:
+
+- Zone (infolab.com) already created in AWS Private DNS
+
+- API sync already done, visible under DNS View AWS.private-1 or default DNS view - which one is available
+
+- NIOS-X service instance deployed
+
+
+✅ Step-by-Step: Configure Infoblox as Authoritative DNS
+
+1. Navigate to DNS Configuration
+
+In the Infoblox I portal, go to **Configure → Networking → DNS → Zones**
+Make sure to select the correct DNS View  and click on it.
+
+![Screenshot 2025-07-13 at 11.55.44.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/a55dc223ea7ed73c32de9c4df88b1dc4/assets/Screenshot%202025-07-13%20at%2011.55.44.png)
+
+Under default view when you click on it you will see infolab.com
+
+![Screenshot 2025-07-13 at 11.55.54.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8fd6ccaf6c402a41cffacbd23ee3753c/assets/Screenshot%202025-07-13%20at%2011.55.54.png)
+
+2. Locate the Synced Zone
+
+You should see  **infolab.com**  listed under the synced zones
+Click the checkbox next to the zone, then hit Edit
+
+
+![Screenshot 2025-07-03 at 12.04.46.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/d6e88db2845e7796854ab0582aafb4fc/assets/Screenshot%202025-07-03%20at%2012.04.46.png)
+
+3. Add Authoritative DNS Server
+
+Scroll down to Authoritative DNS Servers section
+In the Service Instances list, select the Infoblox NIOS-X instance (e.g. TEST) with type NIOS-X (BloxOne) DDI
+Click the arrow >> to move it to the selected list
+
+
+![Screenshot 2025-07-13 at 12.00.23.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/af2ada5e6e4a4fb8db3bd12a96baf87d/assets/Screenshot%202025-07-13%20at%2012.00.23.png)
+
+5. Save & Close
+	•	Click Save and Close
+	•	Zone will now reflect NIOS-X as the authoritative server
+
+
+![Screenshot 2025-07-13 at 12.01.05.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/2636347546e4c9631420a7f51a60c633/assets/Screenshot%202025-07-13%20at%2012.01.05.png)
+
+
+🔍 Step 6: Validate DNS Resolution
+
+
+### Step 1: Access the EC2 Instance
+
+From the **Shell tab** in your lab, run the following:
+
+```run
+cd ~/infoblox-lab/secure-ai-infoblox/terraform
+terraform output
+```
+
+This will show you the SSH command to access the EC2 instance - **WebServerProdEu1**
+
+![Screenshot 2025-07-01 at 13.37.20.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/f72fb1c74b7fb04e90c2d623448bc434/assets/Screenshot%202025-07-01%20at%2013.37.20.png)
+
+
+> [!IMPORTANT]
+> NOTE:Please use your specific SSH command from the `terraform output` to access the instance.
+
+```
+ssh -i 'EU_WEST_WebProd1.pem' ec2-user@35.177.254.177
+```
+
+![Screenshot 2025-07-01 at 13.39.13.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/1356e48269998e5d3e923b8fccb1c51a/assets/Screenshot%202025-07-01%20at%2013.39.13.png)
+
+
+### Step 2: Check DNS Settings
+
+Once inside the EC2 host **WebServerProdEu1** , confirm it’s using the Infoblox DNS server:
+
+```
+cat /etc/resolv.conf
+```
+
+![Screenshot 2025-07-01 at 13.39.54.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/a9bdf0f65c4ad5b23244069f37c8394a/assets/Screenshot%202025-07-01%20at%2013.39.54.png)
+
+> [!IMPORTANT]
+> ✅ You should see: 10.10.10.3
+
+
+
+If not reboot the instance and login again.
+
+![Screenshot 2025-07-03 at 09.33.14.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/a009a9a8c182dea0dc94c41fbaa0d4bd/assets/Screenshot%202025-07-03%20at%2009.33.14.png)
+
+
+From WebServerProdEu1 run the following command:
+
+```run
+dig @10.10.10.3 CNAME infobloxs3.infolab.com
+```
+
+Example output:
+
+![Screenshot 2025-07-13 at 12.05.01.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/56b53a689c6d6265c81e4e5e6f9d285b/assets/Screenshot%202025-07-13%20at%2012.05.01.png)
+
+
+🎯 Success means:
+•	ANSWER SECTION is returned
+•	AUTHORITY SECTION shows your Infoblox record
+•	It resolves against @10.10.10.3 (your Infoblox DNS IP)
+
+
 
 ## Time for the Next Challenge
 

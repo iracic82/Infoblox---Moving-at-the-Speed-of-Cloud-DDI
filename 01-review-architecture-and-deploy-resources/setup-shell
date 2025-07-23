@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This script runs when the platform setup the challenge.
 #
@@ -9,5 +9,11 @@
 echo "This is the setup script"
 
 set-workdir /root/infoblox-lab
+
+
+# Run Python scripts
+cd /root/infoblox-lab/secure-ai-infoblox/scripts
+sleep 480
+python3 deploy_aws_discovery.py
 
 exit 0

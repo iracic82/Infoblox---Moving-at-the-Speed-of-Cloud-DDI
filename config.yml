@@ -18,7 +18,7 @@ virtualbrowsers:
 - name: gcp
   url: https://console.cloud.google.com
 - name: lab
-  url: https://infoblox-igor.s3.eu-west-1.amazonaws.com/Secure+AI+Lab+diagram.jpeg
+  url: https://infoblox-igor.s3.eu-west-1.amazonaws.com/Infoblox+Cloud+Speed+DDI.png
 - name: aws-discovery
   url: https://github.com/iracic82/AWS_Discovery
 - name: flask-ui
@@ -78,3 +78,10 @@ azure_subscriptions:
 - name: infoblox-tenant
   roles:
   - Owner
+secrets:
+- name: Infoblox_Token
+- name: DEMO_AWS_ACCESS_KEY_ID
+- name: DEMO_AWS_SECRET_ACCESS_KEY
+- name: DEMO_HOSTED_ZONE_ID
+- name: INFOBLOX_PASSWORD
+- name: INFOBLOX_EMAIL
