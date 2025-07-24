@@ -130,7 +130,7 @@ following steps:
 ![Jun-23-2025_at_21.47.25-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/ef250f39faaa4f82a041b5e648d6f017/assets/Jun-23-2025_at_21.47.25-image.png)
 2. Click **Add Service** near the bottom left of the As-A-Service page.
 ![Jun-23-2025_at_21.48.01-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/60883e25c289b6db671ce943806ac912/assets/Jun-23-2025_at_21.48.01-image.png)
-3.  Give the new Service a **Name**.
+3.  Give the new Service a **Name** as you see below.
 ![Jun-23-2025_at_21.55.52-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/f8f237f5620096e2b627957810fc001f/assets/Jun-23-2025_at_21.55.52-image.png)
 4.  (Optional) Input a **Description**.
 ![Jun-23-2025_at_21.56.34-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/e36fbd69cfa831608d16bdcfe579951f/assets/Jun-23-2025_at_21.56.34-image.png)

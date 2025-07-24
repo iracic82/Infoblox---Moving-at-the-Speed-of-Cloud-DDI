@@ -20,6 +20,11 @@ cd /root/infoblox-lab/secure-ai-infoblox/scripts || {
 # python3 delete_azure_credential_from_file.py || echo "⚠️ delete_azure_credential_from_file.py failed, skipping"
 # sleep 10
 
+echo "🔧 Running delete_niosxaas.py"
+python3 delete_niosxaas.py || echo "⚠️ delete_niosxaas.py failed, continuing..."
+
+sleep 20
+
 echo "🔧 Running delete_sandbox.py"
 python3 delete_sandbox.py || echo "⚠️ delete_sandbox.py failed, continuing..."
 
