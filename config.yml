@@ -79,6 +79,7 @@ azure_subscriptions:
   roles:
   - Owner
 secrets:
+- name: TF_VAR_windows_admin_password
 - name: INFOBLOX_PASSWORD
 - name: INFOBLOX_EMAIL
 - name: DEMO_HOSTED_ZONE_ID
