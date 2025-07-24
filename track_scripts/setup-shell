@@ -63,10 +63,10 @@ source /root/.bashrc
 
 # Run Python scripts
 cd /root/infoblox-lab/secure-ai-infoblox/scripts
-python3 create_user.py
-sleep 10
 python3 create_sandbox.py
 sleep 180
+python3 create_user.py
+sleep 10
 scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gen-ai.csv infoblox:/home/user/
 
 
