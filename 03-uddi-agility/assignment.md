@@ -35,18 +35,18 @@ lab_config:
   default_layout_sidebar_size: 0
 enhanced_loading: null
 ---
-🔒 Challenge 3: Enhance DNS Security Policy with NIOS-X
+🔒 Challenge 3: Enhance DNS Security Policy with NIOS-X-as-a-Service
 ==
 
 Your NIOS-X-as-a-Service instance is already deployed and integrated with your AWS VPC. DNS resolution is confirmed to be working — now it’s time to review the active DNS security protections and enforce stricter controls like blocking adult content.
 
 ### 🧩 Part 1: Review the Active Security Policy
 
-Let’s begin by reviewing the Security Profile that is currently applied to your NIOS-X deployment.
+Let’s begin by reviewing the Security Policy that is currently applied to your NIOS-X-as-a-Service deployment.
 1.	Log into the Infoblox Universal DDI Console.
 2.	Go to:
 **Configure → Service Deployment → As-a-Service**
-3.	Locate your existing NIOS-X instance.
+3.	Locate your existing NIOS-X-as-a-Service instance.
 4.	Under the Service Capabilities, click on the Security section.
 5.	Note the name of the assigned Security Profile (e.g., Default Global Policy).
 
@@ -54,7 +54,7 @@ Let’s begin by reviewing the Security Profile that is currently applied to you
 
 6.	Navigate to:
 **Configure → Security → Policies**
-7.	Open the assigned policy and inspect existing rules and threat categories being enforced.
+7.	Open the assigned policy and inspect existing rules and threat categories being enforced. Click the Hamburger Icon associated with the Default Global Policy, then click Edit.
 
 
 ![Screenshot 2025-07-13 at 11.14.05.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/9f0f7d46c217144cce8c03e95116e4d3/assets/Screenshot%202025-07-13%20at%2011.14.05.png)
@@ -68,13 +68,13 @@ Let’s begin by reviewing the Security Profile that is currently applied to you
 
 Now you’ll take it a step further by cloning the policy and adding a rule to explicitly block adult content domains.
 
-1.	In the Policies page, click the three-dot menu next to your current policy → **select Clone.**
+1.	In the Policies page, click the hamburger icon next to the Default Global Policy, then  → select Clone. Note by cloning the policy, you’re copying all existing policy rules and creating a new policy.
 
 ![Screenshot 2025-07-13 at 11.14.14.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/dd5c74475d0b0b914ab9ce74383f5197/assets/Screenshot%202025-07-13%20at%2011.14.14.png)
 
-3.	Name the cloned policy: Infoblox-Lab
-4.	Click into the new policy → go to the Policy Rules tab.
-5.	Click Add Rule → choose Category Filter
+3.	Name the cloned policy: Infoblox-Lab.
+4.	Click  the Policy Rules text in the left side-panel.
+5.	Click Add Rule → choose Category Filter.
 
 ![Screenshot 2025-07-13 at 11.17.08.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/d34f2a5e71cbd036d45a4f37ac3a4179/assets/Screenshot%202025-07-13%20at%2011.17.08.png)
 
@@ -95,7 +95,16 @@ Scroll all the way to the bottom to locate the newly added row.
 	6.	Click Add → and move the rule higher in the rule list (for precedence).
 	7.	Click Finish → then Save your new policy.
 
-🎯 Goal: Enforce additional corporate compliance by blocking explicit content domains.
+🎯 Goal: Enforce enhanced corporate compliance by blocking access to explicit content domains, ensuring a safe and policy-compliant browsing environment for users across the organization.
+
+This includes categories such as:
+- Adult content
+- Gambling
+- Violence & Hate
+- Illegal or unethical content
+
+To achieve this, we leverage Infoblox Threat Intelligence feeds and DNS category filtering. Domains are automatically classified using real-time threat intel and reputation scoring — no manual blacklist needed.
+
 
 
 
@@ -104,7 +113,7 @@ Scroll all the way to the bottom to locate the newly added row.
 
 1.	Navigate back to:
 Configure → Service Deployment → As-a-Service
-2.	Edit your existing NIOS-X instance.
+2.	Edit your existing NIOS-X-as-a-Service instance.
 3.	Under Service Capabilities, locate Security → click Edit
 
 ![Screenshot 2025-07-13 at 11.22.58.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/5e9b279b407137462d09ca303f307b3e/assets/Screenshot%202025-07-13%20at%2011.22.58.png)
@@ -113,7 +122,7 @@ Configure → Service Deployment → As-a-Service
 
 ![Screenshot 2025-07-13 at 11.23.06.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/84ecb89847e4fc0b3ab73787bb8baf71/assets/Screenshot%202025-07-13%20at%2011.23.06.png)
 
-6.	Click Update Capability → then Save
+6.	Click Update Capability → then click Save
 
 🎯 Goal: Apply the enhanced policy to your service to start enforcing the new rules.
 
@@ -180,13 +189,13 @@ This means the query was blocked — Infoblox Threat Defense returned NXDOMAIN, 
 If you instead get a valid IP address, your policy might not be correctly applied or the category/rule isn’t matched — go back and review your Security Policy settings.
 
 
-🧾 Lab Wrap-Up: Moving at the Speed of Cloud with NIOS-X
+🧾 Lab Wrap-Up: Moving at the Speed of Cloud with NIOS-X-as-a-Service
 ==
 
 In this challenge, you:
-	•	Reviewed the DNS Security Profile assigned to your NIOS-X deployment
+	•	Reviewed the DNS Security Profile assigned to your NIOS-X-as-a-Service deployment
 	•	Cloned and customized the policy to block adult content
-	•	Applied the updated profile to your NIOS-X instance
+	•	Applied the updated profile to your NIOS-X-as-a-Service instance
 	•	Verified DNS-based enforcement from your EC2 instance
 	•	Observed live telemetry confirming Threat Defense in action
 

@@ -37,20 +37,23 @@ enhanced_loading: null
 ---
 # Overview
 
-CloudOps and NetOps teams today are under constant pressure to deliver DNS, DHCP, and IPAM (DDI) services at the pace of cloud and application teams. Manually provisioning DNS via virtual appliances no longer scales — especially in environments where cost optimization and operational simplicity are paramount.
+CloudOps and NetOps teams today are under constant pressure to deliver core network services DNS, DHCP, and IPAM (DDI)  at the same  pace of cloud and application teams.Providing DNS manually via virtual appliances no longer scales — especially in environments where cost optimization and operational simplicity are paramount.
 
-Enter Infoblox NIOS X-as-a-Service: a fully managed DNS and security service that plugs directly into cloud networks — no VMs, no patching, no operational overhead. Just fast, scalable, policy-aligned DDI as a service.
+Enter Infoblox NIOS X-as-a-Service: a fully managed DNS and security service that plugs directly into cloud networks — no VMs, no patching, no operational overhead. Just fast, scalable, policy-aligned DNS as a service.
+
+> [!IMPORTANT]
+> NOTE: We offer DDI full package but in this lab the focus stays on core components relvant to the scenario at hand.
 
 
 
 # Use Case Story: CloudOps at Speed
 
-Meet Jenna, a CloudOps engineer at a global enterprise. Her team is deploying a new AWS region as part of a global product expansion. This region includes:
+Meet Jenna, a CloudOps engineer at a global enterprise. Her team is deploying a new application in  AWS region as part of a global product expansion. This region includes:
 - A newly provisioned VPC and VPN
 - EC2 workloads requiring immediate name resolution
-- DNS and security policies already defined in Infoblox UDDI
+- DNS and DNS security policies already defined in Infoblox Universal DDI
 
-The networking team — led by Max — is aligned on one principle: no more spinning up virtual appliances just to deliver DNS. The operational burden, patching schedules, and cloud cost models have forced them to look for a SaaS-native solution that just plugs in and works.
+The networking team — led by Max — is aligned on one principle: no more spinning up virtual appliances just to deliver DNS. The operational burden, patching schedules, and cloud cost models have forced them to look for a SaaS solution that just plugs in and works.
 
 
 Here’s the challenge:
@@ -62,15 +65,15 @@ That’s exactly what NIOS X-as-a-Service delivers.
 
 # DDI in Minutes — Without the Baggage
 
-Using the Infoblox SaaS control plane, Jenna:
-- Instantiates a new NIOS-X service using existing DNS + security profiles
+Using the Infoblox SaaS control plane, the  Infoblox Portal,  Jenna:
+- Instantiates a new deploy of NIOS-XaaS service using existing DNS and security profiles
 - Connects it to the AWS VPC in minutes — no agents, no appliances
 - Validates DNS resolution and security policy enforcement directly from a test EC2 instance
 
-Infoblox Universal DDI + Threat Defense provides:
+Infoblox Universal DDI and  Threat Defense provides:
 - ✅ Enterprise-grade DNS in the cloud — without running infrastructure
-- ✅ Real-time enforcement using RPZs and curated threat intel
-- ✅ Operational consistency across on-prem, Azure, and AWS — all from a single SaaS control plane
+- ✅ Real-time enforcement using[RPZs](https://www.infoblox.com/dns-security-resource-center/dns-security-solutions/dns-security-solutions-response-policy-zones-rpz/) and curated threat intel
+- ✅ Operational consistency across on-prem, Azure, GCP and AWS — all from a single SaaS control plane
 
 
 
@@ -83,7 +86,7 @@ Without a SaaS-based DNS and security model:
 
 With Infoblox NIOS X-as-a-Service:
 - DNS and security services are delivered at cloud speed — ops-free
-- CloudOps + NetOps converge around a single, managed DDI platform
+- CloudOps and  NetOps converge around a single, managed DDI platform
 - Centralized visibility, unified policy, and consistent enforcement just work — **with zero infrastructure burden**
 
 ⸻
@@ -137,7 +140,7 @@ On the login screen, choose IAM Account (not root).
 
 ![Screenshot 2025-07-12 at 11.23.29.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/86d80bec0e3af0161dbb62f6e26e2626/assets/Screenshot%202025-07-12%20at%2011.23.29.png)
 
-2.	Enter the AWS Account ID, AWS IAM username, and password by copying and pasting the values from the section below.
+2.	Enter the AWS Account ID, AWS IAM username, and password by copying and pasting the values from the section below. Then, log in by clicking Sign In.
 
 📝 Note: Avoid the root account login — this lab is configured for IAM users only.
 
@@ -163,7 +166,7 @@ On the login screen, choose IAM Account (not root).
 
 🧱 Deploying the Lab Infrastructure: Your AWS Landing Zone Starts Here
 
-You’ve logged into the AWS console — now it’s time to build out the cloud-side foundation for DNS and security. This simulates what you’d do when bringing up a new region or VPC that needs to connect into your existing DNS and security architecture.
+You’ve logged into the AWS console — now it’s time to build out the cloud-side foundation for our lab. This simulates what you’d do when bringing up a new region or VPC that needs to connect into your existing DNS and security architecture.
 
 The goal here isn’t to spin up the kitchen sink — it’s to deploy just enough to simulate real DNS resolution flow through Infoblox NIOS-X as a Service.
 
@@ -220,14 +223,14 @@ terraform apply --auto-approve \
   -target=aws_route53_record.s3_cname
 ```
 
-🛠️ Terraform will take care of the heavy lifting — no console clicking or manual setup. Just wait for the apply to finish.
+🛠️ Terraform will take care of the heavy lifting — no console clicking or manual setup. Just wait for the process to finish.
 
 ---
 ✅ Once Complete
 
 You now have a simulated cloud workload in place — an EC2 instance that will later send DNS queries through the IPsec tunnel to Infoblox NIOS-X as a Service.
 
-🎯 Next step: Deploy the Infoblox service instance, attach it to the VPC, and test DNS + security enforcement in action.
+🎯 Next step: Deploy NIOSX-as-a-Service, attach it to the VPC, and test DNS + security enforcement in action.
 
 ## 4) Create Admin User to your Infoblox Portal Dashboard
 ===

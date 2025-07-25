@@ -3,7 +3,7 @@ id: 26xnz6aweydm
 revision: 1
 title: 'Infoblox - Moving at the Speed of Cloud: DDI'
 teaser: 'Zero to DDI in Minutes: Rapid Cloud Networking with Infoblox NIOS-X'
-description: "Lab Introduction:\n\nMoving at the Speed of Cloud with NIOS-X as a Service\nThis
+description: "Lab Introduction:\n\nMoving at the Speed of Cloud with NIOS-X as a Service.\n\nThis
   hands-on lab guides you through deploying DNS services using Infoblox NIOS-X-as-a-Service,
   simulating a cloud landing zone rollout for a new AWS region.\n\nYou’ll work as
   part of a CloudOps/NetOps team tasked with bringing up DNS and security services
@@ -37,8 +37,5 @@ lab_config:
   hideStopButton: false
   feedback_recap_enabled: true
   feedback_tab_enabled: false
-  theme:
-    name: modern-dark
-  override_challenge_layout: false
   loadingMessages: true
 enhanced_loading: null
