@@ -2,7 +2,7 @@
 slug: manage-uddi
 id: yqkosgouguty
 type: challenge
-title: Deploying and Activating Infoblox NIOSX-as-a-service
+title: Deploying and Activating Infoblox NIOSX-as-a-Service
 teaser: Deploying Infoblox UDDI SaaS offering - DNS and Security Services Enabled
 notes:
 - type: video
