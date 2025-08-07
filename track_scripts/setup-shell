@@ -46,6 +46,8 @@ echo "export DEMO_AWS_ACCESS_KEY_ID=${DEMO_AWS_ACCESS_KEY_ID} " >> /root/.bashrc
 echo "export DEMO_AWS_SECRET_ACCESS_KEY=${DEMO_AWS_SECRET_ACCESS_KEY} " >> /root/.bashrc
 echo "export TF_VAR_instruqt_id=${INSTRUQT_PARTICIPANT_ID} " >> /root/.bashrc
 echo "export DEMO_HOSTED_ZONE_ID=${DEMO_HOSTED_ZONE_ID} " >> /root/.bashrc
+echo "export INFOBLOX_EMAIL=${INFOBLOX_EMAIL} " >> /root/.bashrc
+echo "export INFOBLOX_PASSWORD=${INFOBLOX_PASSWORD} " >> /root/.bashrc
 echo "export Infoblox_Token=${Infoblox_Token} " >> /root/.bashrc
 echo "export INSTRUQT_EMAIL=${INSTRUQT_USER_EMAIL} " >> /root/.bashrc
 
