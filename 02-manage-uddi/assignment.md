@@ -290,6 +290,12 @@ InfobloxDNSLab2025.
 - Click **Add Deployment*
 ![Jun-23-2025_at_23.50.51-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/3c81136d742b21361dd092d245fcdf53/assets/Jun-23-2025_at_23.50.51-image.png)
 15.  Click **Save** to save all changes
+
+> [!NOTE]
+> 📝 NOTE:
+After editing the instructions, make sure to save your changes. To reveal the “Save Changes” button scroll around the portal using the trackpad or mouse until the button appears.
+The button may be hidden by default depending on screen size or browser zoom level.
+
 ![Jun-23-2025_at_23.51.38-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/48c0f3e058adfa068d6b08f800a4b348/assets/Jun-23-2025_at_23.51.38-image.png)
 16.  Wait approximately 3 minutes, then Refresh the Webpage
 17.  Once the NIOS-X-as-a-Service deployment is ready, you will see a Ready Status here
