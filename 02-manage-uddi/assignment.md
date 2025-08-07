@@ -537,6 +537,11 @@ To complete the IPsec setup, you’ll need to fetch the outside IP address for T
 ![Screenshot 2025-07-25 at 10.54.09.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/f3345ccd0afee74a59f68e7187debf61/assets/Screenshot%202025-07-25%20at%2010.54.09.png)
 
 4. In Routes you must see the Service IPs - **Service IP: 10.10.10.3**
+
+> [!NOTE]
+> 📝 NOTE:
+A page refresh may be required if changes don’t appear immediately. For example, after switching to the route tables, the expected options might not show up until the page is refreshed. Refreshing ensures the UI reflects the latest state.
+
 ![Jun-24-2025_at_14.32.04-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/39a9d2ebe179aca2923194d7f89ac9c4/assets/Jun-24-2025_at_14.32.04-image.png)
 5. On AWS console go to Site-to-Site VPN connections and then navigate to VPN-1 that you created
 6. Notice the Tunnel state in Tunnel details  for Tunnel 1 status should be Up
