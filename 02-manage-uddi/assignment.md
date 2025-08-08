@@ -119,7 +119,7 @@ To enable and use NIOS-X-as-a-Service perform the following workflow:
 
 
 
-## 1. Create a Service Deployment on Infoblox CSP for NIOS-X as a Service.
+## 1. Create a Service Deployment on Infoblox Portal for NIOS-X as a Service.
 
 
 This portion of the guide is intended to guide Infoblox Portal administrators through the creation of a Service
@@ -235,7 +235,7 @@ We’re ready to deploy in nearly every major cloud PoP — from AWS, Azure, to 
 ![Screenshot 2025-08-08 at 10.00.08.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8046778c72f8abf6a43158b6f8957cf4/assets/Screenshot%202025-08-08%20at%2010.00.08.png)
 - Configure **Add Primary Tunnel**
 ![Screenshot 2025-08-08 at 10.01.22.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/9a8e391b0ec54e8c05ca66b47dbd66e8/assets/Screenshot%202025-08-08%20at%2010.01.22.png)
-- **Access IP Address**  -  Input a placeholder IP as we will return to this panel and configure this.
+- **Tunnel Outside IP**  -  Input a placeholder IP as we will return to this panel and configure this.
 - Click  **Add Credential**
 - Select **New**
 ![Jun-23-2025_at_23.27.38-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/bebd8949b63de9bc605f58dabbd0dc64/assets/Jun-23-2025_at_23.27.38-image.png)
@@ -255,7 +255,7 @@ InfobloxDNSLab2025.
 - Click **Add Credential**
 ![Jun-23-2025_at_23.46.30-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/43bdbf13333297d12646d12d39553f83/assets/Jun-23-2025_at_23.46.30-image.png)
 - Configure **BGP**
-- enter the placeholder values at  **Neighbor IP Address**  and  **Access Location ASN   as it will be reconfigured.
+- enter the placeholder values at  **Inside IPv4 CIDR**  and  **Access Location ASN**   as it will be reconfigured.
 - Click **Add Primary Tunnel**
 ![Screenshot 2025-08-08 at 10.03.28.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8aefc8c1eb02aaaaded59ceaff9ec17e/assets/Screenshot%202025-08-08%20at%2010.03.28.png)
 - Click **Add Primary Connection**
@@ -270,7 +270,7 @@ InfobloxDNSLab2025.
 - configure **Tunnel**
 - click **Add Secondary**
 ![Screenshot 2025-08-08 at 10.04.15.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/b10ce1db09d998ad8566d119c89c3ff6/assets/Screenshot%202025-08-08%20at%2010.04.15.png)
-- **Access IP Address**  -  Input a placeholder IP as we will configure this later again.
+- **Tunnel Outside IP**  -  Input a placeholder IP as we will configure this later again.
 - Click  **Add Credential**
 - Select **New**
 ![Jun-23-2025_at_23.44.36-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/de93ac2733f1895567a7d6f612f86f1f/assets/Jun-23-2025_at_23.44.36-image.png)
@@ -291,7 +291,7 @@ InfobloxDNSLab2025.
 - Click **Add Credential**
 ![Jun-23-2025_at_23.46.30-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/43bdbf13333297d12646d12d39553f83/assets/Jun-23-2025_at_23.46.30-image.png)
 - Configure **BGP**
-- enter the Dummy values at  **Neighbor IP Address**  and  **Access Location ASN   as it will be reconfigured.
+- enter the Dummy values at  **Inside IPv4 CIDR**  and  **Access Location ASN**   as it will be reconfigured.
 ![Screenshot 2025-08-08 at 10.05.46.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/94d528496651f10cb298ca3c80a6bdcf/assets/Screenshot%202025-08-08%20at%2010.05.46.png)
 - Click **Add Secondary Tunnel**
 ![Screenshot 2025-08-08 at 10.05.53.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/410eb0aca7ce1098481e67670752f56b/assets/Screenshot%202025-08-08%20at%2010.05.53.png)
@@ -505,12 +505,12 @@ To complete the IPsec setup, you’ll need to fetch the outside IP address for T
 8. On **Edit Access Location window** select **Primary Connection**
 ![Jun-24-2025_at_13.29.19-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9a91abda47aedd83ab9f691e81024933/assets/Jun-24-2025_at_13.29.19-image.png)
 9. Under the Connection header click Primary.
-![Jun-24-2025_at_13.29.59-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/003a521643951450f9ba3d3a5bf78784/assets/Jun-24-2025_at_13.29.59-image.png)
+![Screenshot 2025-08-08 at 10.27.59.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8684a9ab0849ad5363a96c77d8e8d060/assets/Screenshot%202025-08-08%20at%2010.27.59.png)
 10. Change the Inside IPv4 CIDR to the  **Outside IP address** of Tunnel-1   of VPN-1from step 3 of 3
-11. On **BGP** in **Neighbor IP Address**   update the **Inside IPv4 CIDR** of Tunnel-1 on AWS side.
+11. On **BGP** in **Inside IPv4 CIDR**   update the **Inside IPv4 CIDR** of Tunnel-1 on AWS side.
 
 > [!IMPORTANT]
-	> NOTE: Neighbor IP is 169.254.21.1
+	> NOTE: Inside IPv4 CIDR is 169.254.21.1/30
 
 13. For **Access Location ASN** copy paste the value from **Amazon ASN**  **64512**
 
@@ -518,22 +518,24 @@ To complete the IPsec setup, you’ll need to fetch the outside IP address for T
 64512
 ```
 
-14. Click Edit Primary Path
-![Jun-24-2025_at_13.35.42-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/a967dd664f3562de2106e09d89f926a4/assets/Jun-24-2025_at_13.35.42-image.png)
+![Screenshot 2025-08-08 at 10.29.20.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/b0f84a150264779463c4f958df747784/assets/Screenshot%202025-08-08%20at%2010.29.20.png)
+
+14. Click Edit Primary Tunnel
+![Screenshot 2025-08-08 at 10.29.44.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8e10e7dbb55d7cffbf796bbf65a5791e/assets/Screenshot%202025-08-08%20at%2010.29.44.png)
 15. Click Edit Primary Connection
 ![Jun-24-2025_at_13.35.58-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/4f432f179e2ae47dd1d294d8cf50b54a/assets/Jun-24-2025_at_13.35.58-image.png)
 16. On **Edit Access Location window** select **Secondary Connection**
 ![Jun-24-2025_at_13.37.15-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/cd5fdbf2ce9f6acdada6a4de379e0b8d/assets/Jun-24-2025_at_13.37.15-image.png)
 17. Under the Tunnel header, click Secondary
-![Jun-24-2025_at_13.37.54-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/7c2a4fceec55690705047d0bcc776f99/assets/Jun-24-2025_at_13.37.54-image.png)
-18. Change Access IP Address as **Outside IP address** of Tunnel-1 of VPN-2 from step 3 of 3
+![Screenshot 2025-08-08 at 10.30.37.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/2abeb04604b20cad3824d30790843c3b/assets/Screenshot%202025-08-08%20at%2010.30.37.png)
+18. Change Tunnel Outside IP as **Outside IP address** of Tunnel-1 of VPN-2 from step 3 of 3
 19. Under the BGP header change the Inside IPv4 CIDR to the  Inside IPv4 CIDR of Tunnel-1 of VPN-2 on AWS side.
 
 > [!IMPORTANT]
-> NOTE: Neighbor IP is 169.254.22.1
+> NOTE: Neighbor IP is 169.254.22.1/30
 
-20.  Click Edit Secondary Path
-![Jun-24-2025_at_13.47.38-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/6eaa5395975a2913394d52224a734657/assets/Jun-24-2025_at_13.47.38-image.png)
+20.  Click Edit Secondary Tunnel
+![Screenshot 2025-08-08 at 10.30.58.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/7368af1152702ac69d6bd312a2118db8/assets/Screenshot%202025-08-08%20at%2010.30.58.png)
 21. Click Edit Secondary Connection
 ![Jun-24-2025_at_13.49.11-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/54e8706e0a06c6ce3a9d9d1d2cb3d9c9/assets/Jun-24-2025_at_13.49.11-image.png)
 22. Click Update Location
