@@ -140,21 +140,33 @@ following steps:
 ![Jun-23-2025_at_21.56.34-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/e36fbd69cfa831608d16bdcfe579951f/assets/Jun-23-2025_at_21.56.34-image.png)
 5.  Click **Add** on CAPABILITIES option and select each service that NIOS-X-as-a-Service will be serving. Repeat this step for all desired services **DNS and Security**.
 ![Jun-23-2025_at_22.02.25-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/93ab9e2e7e0b83e03438ded03cbde983/assets/Jun-23-2025_at_22.02.25-image.png)
-6.  Add both, DNS and Security by using the Add dropdown.
-![Jun-23-2025_at_22.03.23-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/33f711000fbe493d64381cb68e157d03/assets/Jun-23-2025_at_22.03.23-image.png)
+6.  Select **DNS** here.
+![Screenshot 2025-08-07 at 13.31.06.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/7ac935709da3ddf994d4d749035be891/assets/Screenshot%202025-08-07%20at%2013.31.06.png)
+![Screenshot 2025-07-10 at 16.32.17.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9351147ebbee194d378a0a37e44cd1be/assets/Screenshot%202025-07-10%20at%2016.32.17.png)
 7.  Keep the default settings as they are and click **Add Capability**.
-![Jun-23-2025_at_22.04.17-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/b906ab18c269d322d09c2d85b48dc960/assets/Jun-23-2025_at_22.04.17-image.png)
-8.  Switch to **Deployment** tab.
+![Screenshot 2025-07-10 at 16.23.49.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9142ec33e9893647f058899664683d48/assets/Screenshot%202025-07-10%20at%2016.23.49.png)
+
+8.Click **Add** under CAPABILITIES Section again.
+
+![Screenshot 2025-07-10 at 16.24.10.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/ec67f36955f8fee2001ab3c153698477/assets/Screenshot%202025-07-10%20at%2016.24.10.png)
+
+9.Select **Security** here.
+
+![Screenshot 2025-07-10 at 16.24.20.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/db28a58988abbd1ed863cd17f2ebdf67/assets/Screenshot%202025-07-10%20at%2016.24.20.png)
+
+10.Click **Add Capability** on the bottom.
+
+11.Switch to **Deployment** tab.
 
 > [!IMPORTANT]
 > NOTE: We are still on Add Service Wizard Page
 
 ![Jun-24-2025_at_00.10.26-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/bcb672c7fb25ba1c4245f008e626c27c/assets/Jun-24-2025_at_00.10.26-image.png)
-9.  Select **Add Service Deployment**.
+12.  Select **Add Service Deployment**.
 ![Jun-23-2025_at_22.06.11-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9a8efe0efe962857148c6eb8e4f372f9/assets/Jun-23-2025_at_22.06.11-image.png)
-10.  Give the new Deployment a **Name**.
+13.  Give the new Deployment a **Name**.
 ![Jun-23-2025_at_22.07.32-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/eef25cf3bd06b9bd601de829f62c78f1/assets/Jun-23-2025_at_22.07.32-image.png)
-11.  Configure **Service Location** as given
+14.  Configure **Service Location** as given
 -  **Size** -  Select **S**
 -  **Provider** -  Select **AWS**
 -  **Uncheck** Use Recommended Location
@@ -173,9 +185,8 @@ Copy the Service IP from below and paste it  into the Infoblox Portal
 ```
 10.10.10.3
 ```
-
-![Jun-23-2025_at_22.24.50-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/a222b212a541874fcb7354759aa81110/assets/Jun-23-2025_at_22.24.50-image.png)
-12. Configure **Service Location Routing** as given
+![Screenshot 2025-08-07 at 13.41.54.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/6f68cd0c5fdc4e5c1f92e9b98890ceee/assets/Screenshot%202025-08-07%20at%2013.41.54.png)
+15. Configure **Service Location Routing** as given
 - **Routing** -  Select **Dynamic(BGP)**
 - **Service Location ASN**  -  Enter **65500** {Note this value will be used while configuring the CGW on AWS side so remember this}
 - **Primary Source IP **
@@ -197,8 +208,8 @@ Copy the Service IP from below and paste it  into the Infoblox Portal
 
 
 
-![Jun-23-2025_at_22.28.53-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/cbfd6575a65414cfe8e907e310f12251/assets/Jun-23-2025_at_22.28.53-image.png)
-13.  Configure **Access Location**
+![Screenshot 2025-08-07 at 13.42.47.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/a41b067b60a78b1fc6b2ab047426a7bd/assets/Screenshot%202025-08-07%20at%2013.42.47.png)
+16.  Configure **Access Location**
 - Click **Add**
 - **Provider** -  **AWS**
 - **Type** - **Cloud VPN**
@@ -210,20 +221,20 @@ We’re ready to deploy in nearly every major cloud PoP — from AWS, Azure, to 
 
 
 - **Name** -  **name your access location**
-![Jun-23-2025_at_22.37.16-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/b30ee63ea3d4b78900de98bd228d127f/assets/Jun-23-2025_at_22.37.16-image.png)
-14.  Configure **CONNECTION**
-14.1 click **Add Primary**
+![Screenshot 2025-08-07 at 13.47.23.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/75590c5452e625ca4482aa69e4c5a5ad/assets/Screenshot%202025-08-07%20at%2013.47.23.png)
+17.  Configure **CONNECTION**
+17.1 Click **Add Primary**
 ![Jun-23-2025_at_23.18.57-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/6de0d05fa4742d9e6a281a7af4aa4a48/assets/Jun-23-2025_at_23.18.57-image.png)
 - give name to your primary connection
 
 > [!IMPORTANT]
 > ✅ NOTE:Make the name unique for both the Primary  and the  Secondary Connection.
 
-- configure **PATH**
+- configure **Tunnel**
 - click **Add Primary**
-![Jun-23-2025_at_23.21.04-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9c4b41a974989ff6f43432c4180680f6/assets/Jun-23-2025_at_23.21.04-image.png)
-- Configure **Add Primary Path**
-![Jun-23-2025_at_23.26.16-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/f9122b5e626f3b211dea91ee73e5a23c/assets/Jun-23-2025_at_23.26.16-image.png)
+![Screenshot 2025-08-08 at 10.00.08.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8046778c72f8abf6a43158b6f8957cf4/assets/Screenshot%202025-08-08%20at%2010.00.08.png)
+- Configure **Add Primary Tunnel**
+![Screenshot 2025-08-08 at 10.01.22.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/9a8e391b0ec54e8c05ca66b47dbd66e8/assets/Screenshot%202025-08-08%20at%2010.01.22.png)
 - **Access IP Address**  -  Input a placeholder IP as we will return to this panel and configure this.
 - Click  **Add Credential**
 - Select **New**
@@ -245,20 +256,20 @@ InfobloxDNSLab2025.
 ![Jun-23-2025_at_23.46.30-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/43bdbf13333297d12646d12d39553f83/assets/Jun-23-2025_at_23.46.30-image.png)
 - Configure **BGP**
 - enter the placeholder values at  **Neighbor IP Address**  and  **Access Location ASN   as it will be reconfigured.
-- Click **Add Primary Path**
-![Jun-23-2025_at_23.33.24-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/473b4aed0aa79cd469105096fd782c69/assets/Jun-23-2025_at_23.33.24-image.png)
+- Click **Add Primary Tunnel**
+![Screenshot 2025-08-08 at 10.03.28.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8aefc8c1eb02aaaaded59ceaff9ec17e/assets/Screenshot%202025-08-08%20at%2010.03.28.png)
 - Click **Add Primary Connection**
 ![Jun-23-2025_at_23.33.40-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9a26d9c5857aa778823016db47fca9b8/assets/Jun-23-2025_at_23.33.40-image.png)
-14.2 Click **Add Secondary**
+17.2 Click **Add Secondary**
 ![Jun-23-2025_at_23.41.20-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/341cc0537721ae693255e72b7a45a9e5/assets/Jun-23-2025_at_23.41.20-image.png)
 - give name to your secondary connection
 
 > [!IMPORTANT]
 > ✅ NOTE:Make the name unique for both the Primary  and the  Secondary Connection.
 
-- configure **PATH**
+- configure **Tunnel**
 - click **Add Secondary**
-![Jun-23-2025_at_23.42.48-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/30268ed660cd4bb79353427fd892c92c/assets/Jun-23-2025_at_23.42.48-image.png)
+![Screenshot 2025-08-08 at 10.04.15.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/b10ce1db09d998ad8566d119c89c3ff6/assets/Screenshot%202025-08-08%20at%2010.04.15.png)
 - **Access IP Address**  -  Input a placeholder IP as we will configure this later again.
 - Click  **Add Credential**
 - Select **New**
@@ -281,15 +292,16 @@ InfobloxDNSLab2025.
 ![Jun-23-2025_at_23.46.30-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/43bdbf13333297d12646d12d39553f83/assets/Jun-23-2025_at_23.46.30-image.png)
 - Configure **BGP**
 - enter the Dummy values at  **Neighbor IP Address**  and  **Access Location ASN   as it will be reconfigured.
-- Click **Add Secondary Path**
-![Jun-23-2025_at_23.48.19-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/df4fae96328440b4d55dfa99199929ef/assets/Jun-23-2025_at_23.48.19-image.png)
+![Screenshot 2025-08-08 at 10.05.46.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/94d528496651f10cb298ca3c80a6bdcf/assets/Screenshot%202025-08-08%20at%2010.05.46.png)
+- Click **Add Secondary Tunnel**
+![Screenshot 2025-08-08 at 10.05.53.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/410eb0aca7ce1098481e67670752f56b/assets/Screenshot%202025-08-08%20at%2010.05.53.png)
 - Click **Add Secondary Connection**
 ![Jun-23-2025_at_23.48.39-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/20187257b5fabe28df90fa9b985e8a04/assets/Jun-23-2025_at_23.48.39-image.png)
 - Finally click **Add Location**
 ![Jun-23-2025_at_23.49.59-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/0292d885d013c51a6b63219811845420/assets/Jun-23-2025_at_23.49.59-image.png)
 - Click **Add Deployment*
 ![Jun-23-2025_at_23.50.51-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/3c81136d742b21361dd092d245fcdf53/assets/Jun-23-2025_at_23.50.51-image.png)
-15.  Click **Save** to save all changes
+18.  Click **Save** to save all changes
 
 > [!NOTE]
 > 📝 NOTE:
@@ -297,16 +309,23 @@ After editing the instructions, make sure to save your changes. To reveal the �
 The button may be hidden by default depending on screen size or browser zoom level.
 
 ![Jun-23-2025_at_23.51.38-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/48c0f3e058adfa068d6b08f800a4b348/assets/Jun-23-2025_at_23.51.38-image.png)
-16.  Wait approximately 3 minutes, then Refresh the Webpage
-17.  Once the NIOS-X-as-a-Service deployment is ready, you will see a Ready Status here
+19.  Wait approximately 3 minutes, then Refresh the Webpage
+20.  Once the NIOS-X-as-a-Service deployment is ready, you will see a Ready Status here
 ![Jun-24-2025_at_00.03.36-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/925ad34b8029024c613494d7a41feedd/assets/Jun-24-2025_at_00.03.36-image.png)
-18.  Click on the hyperlink below Location and notice **SERVICE DEPLOYMENT** details
+21.  Click on the hyperlink below Location and notice **SERVICE DEPLOYMENT** details
 ![Jun-24-2025_at_00.04.40-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/56e6f0c45581dc1c4d9f6ecf2c20263c/assets/Jun-24-2025_at_00.04.40-image.png)
-19.  Copy these Cloud Service IPs located in the Service Deployment panel, these { will be used later.}
+22.  Copy these Cloud Service IPs located in the Service Deployment panel, these { will be used later.}
 
 > [!IMPORTANT]
 > Note: Cloud Service IPs may take up to 5 minutes to appear. Please refresh the page periodically and allow time for propagation NIOS-X-as-a-Service’s deployment process to complete.
 
+🔍 Heads-Up!
+
+If you’re unable to see the Cloud Service IP under the Service Deployment section, it might be due to your screen resolution or window size.
+
+✅ Try minimizing the guide or dragging it to the right to reveal the full Infoblox Portal view.
+
+On smaller screens or in split view, this section might be partially hidden — especially on iPads or laptops. Make sure you’re in full-screen mode for best visibility.
 
 ## 2. Configuring AWS
 
