@@ -213,7 +213,7 @@ Copy the Service IP from below and paste it  into the Infoblox Portal
 - Click **Add**
 - **Provider** -  **AWS**
 - **Type** - **Cloud VPN**
-- **Region** - **Select as Earlier selected Location in Service Deployment**
+- **Region** - **Select as stated on the Lab Diagram - Europe(London)**
 
 > [!NOTE]
 > 💡 Need global reach?
@@ -221,7 +221,7 @@ We’re ready to deploy in nearly every major cloud PoP — from AWS, Azure, to 
 
 
 - **Name** -  **name your access location**
-![Screenshot 2025-08-07 at 13.47.23.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/75590c5452e625ca4482aa69e4c5a5ad/assets/Screenshot%202025-08-07%20at%2013.47.23.png)
+![Screenshot 2025-08-08 at 11.14.57.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/5a1b1624f5af488f3a7d37e681176726/assets/Screenshot%202025-08-08%20at%2011.14.57.png)
 17.  Configure **CONNECTION**
 17.1 Click **Add Primary**
 ![Jun-23-2025_at_23.18.57-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/6de0d05fa4742d9e6a281a7af4aa4a48/assets/Jun-23-2025_at_23.18.57-image.png)
