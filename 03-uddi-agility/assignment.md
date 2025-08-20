@@ -193,10 +193,10 @@ If you instead get a valid IP address, your policy might not be correctly applie
 ==
 
 In this challenge, you:
-	•	Reviewed the DNS Security Profile assigned to your NIOS-X-as-a-Service deployment
-	•	Cloned and customized the policy to block adult content
-	•	Applied the updated profile to your NIOS-X-as-a-Service instance
-	•	Verified DNS-based enforcement from your EC2 instance
-	•	Observed live telemetry confirming Threat Defense in action
+- Reviewed the DNS Security Profile assigned to your NIOS-X-as-a-Service deployment
+- Cloned and customized the policy to block adult content
+- Applied the updated profile to your NIOS-X-as-a-Service instance
+- Verified DNS-based enforcement from your EC2 instance
+- Observed live telemetry confirming Threat Defense in action
 
 You now have a cloud-native, policy-enforced DNS layer running in AWS — deployable in minutes using NIOS-X-as-a-Service.
