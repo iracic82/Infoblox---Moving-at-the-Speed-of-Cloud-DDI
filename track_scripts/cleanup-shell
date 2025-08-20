@@ -25,6 +25,11 @@ python3 delete_niosxaas.py || echo "⚠️ delete_niosxaas.py failed, continuing
 
 sleep 20
 
+echo "🔧 Running purge_discovery_jobs.py"
+python3 purge_discovery_jobs.py || echo "⚠️ purge_discovery_jobs.py failed, continuing..."
+
+sleep 20
+
 echo "🔧 Running delete_sandbox.py"
 python3 delete_sandbox.py || echo "⚠️ delete_sandbox.py failed, continuing..."
 
