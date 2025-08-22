@@ -72,7 +72,7 @@ Using the Infoblox SaaS control plane, the  Infoblox Portal,  Jenna:
 
 Infoblox Universal DDI and  Threat Defense provides:
 - ✅ Enterprise-grade DNS in the cloud — without running infrastructure
-- ✅ Real-time enforcement using[RPZs](https://www.infoblox.com/dns-security-resource-center/dns-security-solutions/dns-security-solutions-response-policy-zones-rpz/) and curated threat intel
+- ✅ Real-time enforcement using [RPZs](https://www.infoblox.com/dns-security-resource-center/dns-security-solutions/dns-security-solutions-response-policy-zones-rpz/) and curated threat intel
 - ✅ Operational consistency across on-prem, Azure, GCP and AWS — all from a single SaaS control plane
 
 
