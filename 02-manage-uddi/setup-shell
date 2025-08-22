@@ -11,6 +11,6 @@ echo "This is the setup script"
 set-workdir /root/infoblox-lab
 sleep 480
 cd /root/infoblox-lab/secure-ai-infoblox/scripts
-python3 deploy_aws_discovery.py
+python3 deploy_aws_discovery_final.py
 sleep 120
 exit 0
