@@ -681,6 +681,33 @@ From WebServerProdEu1 run the following command:
 dig google.com
 ```
 
+⚠️ Expected Outcome:
+When you run dig google.com, you should see an output similar to below. The IP addresses will vary, but the key thing is:
+- There is an ANSWER SECTION
+- It contains one or more A or AAAA records for google.com
+- The SERVER line should show your Infoblox DNS server (10.10.10.3)
+
+```
+; <<>> DiG 9.16.1 <<>> google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12345
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;google.com.                    IN      A
+
+;; ANSWER SECTION:
+google.com.             42      IN      A       142.250.74.14
+google.com.             42      IN      A       142.250.74.78
+
+;; Query time: 24 msec
+;; SERVER: 10.10.10.3#53(10.10.10.3)
+;; WHEN: Fri Aug 29 10:22:35 UTC 2025
+;; MSG SIZE  rcvd: 65
+```
+
+
 ## 4) Configuring Infoblox NIOS-X-as-a-Service  as Authoritative DNS for AWS Private Zone
 ===
 
