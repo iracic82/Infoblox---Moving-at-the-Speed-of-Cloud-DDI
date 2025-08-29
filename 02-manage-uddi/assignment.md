@@ -507,7 +507,7 @@ To complete the IPsec setup, you’ll need to fetch the outside IP address for T
 9. Under the Connection header click Primary.
 ![Screenshot 2025-08-08 at 10.27.59.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8684a9ab0849ad5363a96c77d8e8d060/assets/Screenshot%202025-08-08%20at%2010.27.59.png)
 10. Change Tunnel Outside IP as **Outside IP address** of Tunnel-1   of VPN-1from step 3 of 3
-11. On **BGP** in **Inside IPv4 CIDR**   update the **Inside IPv4 CIDR** of Tunnel-1 on AWS side.
+11. On **BGP** in **Inside IPv4 CIDR**   update the **Inside IPv4 CIDR** of Tunnel-1 on AWS side using IP below:
 
 > [!IMPORTANT]
 NOTE: Inside IPv4 CIDR is 169.254.21.1/30
@@ -529,22 +529,28 @@ NOTE: Inside IPv4 CIDR is 169.254.21.1/30
 17. Under the Tunnel header, click Secondary
 ![Screenshot 2025-08-08 at 10.30.37.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/2abeb04604b20cad3824d30790843c3b/assets/Screenshot%202025-08-08%20at%2010.30.37.png)
 18. Change Tunnel Outside IP as **Outside IP address** of Tunnel-1 of VPN-2 from step 3 of 3
-19. Under the BGP header change the Inside IPv4 CIDR to the  Inside IPv4 CIDR of Tunnel-1 of VPN-2 on AWS side.
+19. Under the BGP header change the Inside IPv4 CIDR to the  Inside IPv4 CIDR range of Tunnel-1 of VPN-2 on AWS side using IP below:
 
 > [!IMPORTANT]
 NOTE: Neighbor IP is 169.254.22.1/30
 
-20.  Click Edit Secondary Tunnel
+20.For **Access Location ASN** copy paste the value from **Amazon ASN**  **64512**
+
+```
+64512
+```
+
+21.  Click Edit Secondary Tunnel
 ![Screenshot 2025-08-08 at 10.30.58.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/7368af1152702ac69d6bd312a2118db8/assets/Screenshot%202025-08-08%20at%2010.30.58.png)
-21. Click Edit Secondary Connection
+22. Click Edit Secondary Connection
 ![Jun-24-2025_at_13.49.11-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/54e8706e0a06c6ce3a9d9d1d2cb3d9c9/assets/Jun-24-2025_at_13.49.11-image.png)
-22. Click Update Location
+23. Click Update Location
 ![Jun-24-2025_at_13.50.15-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/38458b7ba2911d35a03df65b7a6b2dfa/assets/Jun-24-2025_at_13.50.15-image.png)
-23. Click Update
+24. Click Update
 ![Jun-24-2025_at_13.50.40-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/b7ed57f432cb1517ec75b2b46eecb834/assets/Jun-24-2025_at_13.50.40-image.png)
-24. Click Save
+25. Click Save
 ![Jun-24-2025_at_13.51.04-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/55d40f83c2d3f76ec00fb089450b31f7/assets/Jun-24-2025_at_13.51.04-image.png)
-25. Now you should see a green square and connected as status in front of your Access Location under SERVICE STATUS
+26. Now you should see a green square and connected as status in front of your Access Location under SERVICE STATUS
 ![Jun-24-2025_at_14.10.05-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/a9b8a0d64a181aea6f7e4ec787c48f15/assets/Jun-24-2025_at_14.10.05-image.png)
 
 
