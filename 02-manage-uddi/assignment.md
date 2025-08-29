@@ -506,7 +506,7 @@ To complete the IPsec setup, you’ll need to fetch the outside IP address for T
 ![Jun-24-2025_at_13.29.19-image.png](https://play.instruqt.com/assets/tracks/atmmwsclkofd/9a91abda47aedd83ab9f691e81024933/assets/Jun-24-2025_at_13.29.19-image.png)
 9. Under the Connection header click Primary.
 ![Screenshot 2025-08-08 at 10.27.59.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/8684a9ab0849ad5363a96c77d8e8d060/assets/Screenshot%202025-08-08%20at%2010.27.59.png)
-10. Change the Inside IPv4 CIDR to the  **Outside IP address** of Tunnel-1   of VPN-1from step 3 of 3
+10. Change Tunnel Outside IP as **Outside IP address** of Tunnel-1   of VPN-1from step 3 of 3
 11. On **BGP** in **Inside IPv4 CIDR**   update the **Inside IPv4 CIDR** of Tunnel-1 on AWS side.
 
 > [!IMPORTANT]
