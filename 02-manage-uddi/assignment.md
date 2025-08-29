@@ -510,7 +510,7 @@ To complete the IPsec setup, you’ll need to fetch the outside IP address for T
 11. On **BGP** in **Inside IPv4 CIDR**   update the **Inside IPv4 CIDR** of Tunnel-1 on AWS side.
 
 > [!IMPORTANT]
-	> NOTE: Inside IPv4 CIDR is 169.254.21.1/30
+NOTE: Inside IPv4 CIDR is 169.254.21.1/30
 
 13. For **Access Location ASN** copy paste the value from **Amazon ASN**  **64512**
 
@@ -532,7 +532,7 @@ To complete the IPsec setup, you’ll need to fetch the outside IP address for T
 19. Under the BGP header change the Inside IPv4 CIDR to the  Inside IPv4 CIDR of Tunnel-1 of VPN-2 on AWS side.
 
 > [!IMPORTANT]
-> NOTE: Neighbor IP is 169.254.22.1/30
+NOTE: Neighbor IP is 169.254.22.1/30
 
 20.  Click Edit Secondary Tunnel
 ![Screenshot 2025-08-08 at 10.30.58.png](https://play.instruqt.com/assets/tracks/26xnz6aweydm/7368af1152702ac69d6bd312a2118db8/assets/Screenshot%202025-08-08%20at%2010.30.58.png)
