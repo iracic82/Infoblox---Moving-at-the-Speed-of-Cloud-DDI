@@ -27,7 +27,8 @@ tags: []
 owner: infoblox
 developers:
 - iracic@infoblox.com
-instructors: []
+instructors:
+- jmuller@infoblox.com
 show_timer: true
 idle_timeout: 0
 timelimit: 14400
