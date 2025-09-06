@@ -245,7 +245,8 @@ For On-Demand labs, your user is already created automatically — you can skip 
 
 
 ```
-export INSTRUQT_EMAIL="your.business.email@example.com"
+echo 'export INSTRUQT_EMAIL="your.business.email@example.com"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ⚠️ Make sure to use the same business email you registered with for this event and the one you used to start the lab.
