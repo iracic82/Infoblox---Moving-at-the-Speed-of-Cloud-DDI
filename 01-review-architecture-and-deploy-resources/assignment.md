@@ -235,11 +235,16 @@ You now have a simulated cloud workload in place — an EC2 instance that will l
 ## 4) Create Admin User to your Infoblox Portal Dashboard
 ===
 
-Pre-Step: User Creation (Live Event Only)
+# Pre-Step: User Creation
 
-[!IMPORTANT]
+There are two different flows depending on whether you are running this lab On-Demand or as part of a Live Event (Hot Pool). Please follow the correct path below.
+
+
+##  ▶️ Live Event (Hot Pool)
+
+> [!IMPORTANT]
 Live Event Only: If you are running this lab as part of a live event (Hot Pool), you must manually create your user before continuing.
-For On-Demand labs, your user is already created automatically — you can skip this step and go directly to Section 1.
+For On-Demand labs, your user is already created automatically — you can skip this step and go directly to On-Demand Section 1.
 
 1.	In the Instruqt Shell tab, export your business email as an environment variable:
 
@@ -265,6 +270,10 @@ python3 create_user.py
 
 > [!NOTE]
 > Note: Use your Business Email for User Creation
+
+
+
+## ▶️ On-Demand Lab
 
 Your user account and sandbox have already been created. The next step is to set up your password and activate your account.
 
