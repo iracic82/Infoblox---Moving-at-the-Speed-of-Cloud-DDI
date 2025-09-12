@@ -59,6 +59,7 @@ aws_accounts:
   - oam
   - sqs
   - sts
+  - networkmanager
   regions:
   - eu-west-2
   - eu-central-1
