@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 
 # Install Terraform & Requests library
 apt update -y
@@ -65,9 +66,9 @@ source /root/.bashrc
 
 # Run Python scripts
 cd /root/infoblox-lab/secure-ai-infoblox/scripts
-python3 create_sandbox.py
+python3 create_sandbox_final.py
 sleep 180
-python3 create_user.py
+python3 create_user_final.py
 sleep 10
 scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gen-ai.csv infoblox:/home/user/
 

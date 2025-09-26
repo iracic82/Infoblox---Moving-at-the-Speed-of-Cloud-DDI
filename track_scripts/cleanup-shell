@@ -30,22 +30,22 @@ python3 purge_discovery_jobs.py || echo "⚠️ purge_discovery_jobs.py failed, 
 
 sleep 20
 
+echo "🔧 Running delete_user.py"
+if [[ -f user_id.txt ]]; then
+  python3 delete_user_final.py || echo "⚠️ delete_user.py failed, continuing..."
+else
+  echo "⚠️ Skipping delete_user.py: user_id.txt not found"
+fi
+
+sleep 20
+
 echo "🔧 Running delete_sandbox.py"
-python3 delete_sandbox.py || echo "⚠️ delete_sandbox.py failed, continuing..."
+python3 delete_sandbox_final.py || echo "⚠️ delete_sandbox.py failed, continuing..."
 
 sleep 10
 
 echo "🔧 Running clean_dns_web.py"
 python3 clean_dns_web.py || echo "⚠️ clean_dns_web.py failed, continuing..."
-
-sleep 10
-
-echo "🔧 Running delete_user.py"
-if [[ -f user_id.txt ]]; then
-  python3 delete_user.py || echo "⚠️ delete_user.py failed, continuing..."
-else
-  echo "⚠️ Skipping delete_user.py: user_id.txt not found"
-fi
 
 sleep 10
 
