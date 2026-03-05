@@ -40,6 +40,7 @@ fi
 sleep 20
 
 echo "🔧 Running delete_sandbox.py"
+Infoblox_Token=${Infoblox_Token}
 python3 delete_sandbox_final.py || echo "⚠️ delete_sandbox.py failed, continuing..."
 
 sleep 10
